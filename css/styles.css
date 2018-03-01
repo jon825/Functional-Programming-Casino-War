@@ -1,0 +1,23 @@
+header{
+  background-color: salmon;
+  padding-top:1px;
+  padding-left:5px;
+  color:white;
+}
+
+.player{
+  text-align: right;
+}
+
+.winner{
+  text-align: center;
+}
+
+.dealHand{
+  vertical-align: bottom;
+}
+
+.playersCard{
+  height:10em;
+  width:7em;
+}

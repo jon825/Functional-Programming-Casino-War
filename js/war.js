@@ -1,25 +1,37 @@
 //game of war is who has the highest card.
 //each players and dealer is assigned a card and whoever has the highest is the winner
-let newDeck = deck();
-let shuffleDeck = shuffle(newDeck);
-let tableGame = table(1);
-let playersHand = playersCard();
-let dealersHand = dealersCard();
-// winner(tableGame, dealersHand);
 
-// console.log("dealers hand", dealersHand);
-
-function deck() {
-  const suits = ["spade", "heart", "diamond", "clubs"];
+function deck(numberofDeck) {
+  const suits = ["spade", "heart", "diamond", "club"];
   const ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
   let deck = [];
   for (let i = 0; i < suits.length; i++) {
     for (let j = 0; j < ranks.length; j++) {
       let card = { suit: suits[i], rank: ranks[j] };
-      deck.push(card);
+      for (let k = 0; k < numberofDeck; k++) {
+        //through this loop user will have the option of inputting how many decks they want to play with;
+        deck.push(card);
+      }
     }
   }
   return deck;
+}
+
+function suits(cardSuit){
+  let suit;
+  if(cardSuit === "heart"){
+    suit = "H";
+  }
+    if(cardSuit === "club"){
+    suit = "C";
+  }
+    if(cardSuit === "spade"){
+    suit = "S";
+  }
+    if(cardSuit === "diamond"){
+    suit = "D";
+  }
+  return suit
 }
 
 function shuffle(array) {
@@ -44,22 +56,25 @@ function table(players) {
   for (let i = 0; i < players; i++) {
     let player = {
       player: [i],
-      hand: playersCard(),
-      bet: 0
+      hand: playersCard()
     };
     numberOfPlayers.push(player);
+    // if(player.bet !== 0){
+    //   numberOfPlayers.push(player);
+    //   player.money = player.money - player.bet
+    // }
   }
   return numberOfPlayers;
 }
 
-function playersCard() {
+function playersCard(newDeck) {
   let player = [];
   let dealtCard = newDeck.pop();
   player.push(faceCardValue(dealtCard));
   return player;
 }
 
-function dealersCard() {
+function dealersCard(newDeck) {
   let dealer = [];
   let dealtCard = newDeck.pop();
   dealer.push(faceCardValue(dealtCard));
@@ -70,33 +85,46 @@ function faceCardValue(card) {
   //cards J, Q, and K are greater than 9
   //cards A are greater than 10
   //we have to implement these rules
-  if (card.rank === "J" || card.rank === "Q" || card.rank === "K") {
-    card.rank = 10;
-  } else if (card.rank === "A") {
+  if (card.rank === "J") {
     card.rank = 11;
+  }
+  if(card.rank === "Q") {
+    card.rank = 12};
+
+  if(card.rank === "K") {
+    card.rank = 13;
+  }
+  if (card.rank === "A") {
+    card.rank = 14;
   }
   return card;
 }
 
+function score() {
+  let totalScore = 0;
+  return totalScore;
+}
+
 function winner(players, dealer) {
-  let winner;
-  // console.log(players)
-  for (let i = 0; i < players.length; i++) {
-    console.log(players[i].hand)
-    if (players[i].hand[0].rank > dealersHand[0].rank) {
-      console.log("player win");
-    } else if (players[i].hand[0].rank == dealersHand[0].rank) {
-      console.log("push");
-    } else {
-      console.log("dealer win");
-    }
+  let winner
+  if (players[0].rank > dealer[0].rank) {
+    winner = "player win";
+    playerScore++;
+  } else if (players[0].rank == dealer[0].rank) {
+    winner = "push";
+  } else {
+    winner = "dealer win";
   }
+  return winner;
 }
 
-function placeBets(){
+function placeBets(playerPot, betAmount) {
+  let bet = 0;
   let minimumBet = 10;
-  let playerBet = tableGame[0].bet + minimumBet;
-  console.log(tableGame);
+  if (betAmount > minimumBet) {
+    bet = betAmount;
+  } else {
+    return bet;
+  }
+  return bet;
 }
-
-placeBets()
