@@ -17,7 +17,7 @@ header{
   vertical-align: bottom;
 }
 
-.playersCard{
+.playersCard, .dealersCard{
   height:10em;
   width:7em;
 }
