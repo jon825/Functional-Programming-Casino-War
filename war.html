@@ -14,23 +14,16 @@
   </head>
 
 
-  <body>
+  <body class="warGame">
     <div class="container-fluid">
-
-
     <header>
       <h1>WAR!</h1>
     </header>
 
-    <div class="numberOfDecks">
-      <input>
-      <button>Submit</button>
-    </div>
-
     <br>
-    <div class="newGame">
+<!--     <div class="newGame">
       <button>New Game</button>
-    </div>
+    </div> -->
 
 
     <div class="board">
@@ -41,27 +34,23 @@
           <h1>Dealer's Hand</h1>
           <div id="dealerScore">
             <span>Score: </span>
-            <h4></h4>
+            <h4>0</h4>
           </div>
-          <div id="dealersCard">
-            <img class="dealersCard" src="img/cardback.jpg">
+          <div>
+            <img id="card" class="dealersCard backCard" src="img/cardback.jpg">
           </div>
         </div>
 
       </div>
 
       <div class="col winner">
-      <div class="align-self-center">
-        <h5></h5>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
+            <h5></h5>
 
-    <div class="dealHand">
-      <button>Deal Hand</button>
-    </div>
+        <div class="dealHand row">
+          <button>Deal Hand</button>
+        </div>
+
+
   </div>
 
 
@@ -70,10 +59,10 @@
           <h1>Player's Hand</h1>
           <div id="playerScore">
             <span>Score: </span>
-            <h4></h4>
+            <h4>0</h4>
           </div>
-          <div id="playersCard">
-            <img class="playersCard" src="img/cardback.jpg">
+          <div>
+            <img id="card" class="playersCard backCard" src="img/cardback.jpg">
           </div>
         </div>
 

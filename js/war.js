@@ -67,18 +67,11 @@ function table(players) {
   return numberOfPlayers;
 }
 
-function playersCard(newDeck) {
-  let player = [];
+function dealHand(newDeck) {
+  let hand = [];
   let dealtCard = newDeck.pop();
-  player.push(faceCardValue(dealtCard));
-  return player;
-}
-
-function dealersCard(newDeck) {
-  let dealer = [];
-  let dealtCard = newDeck.pop();
-  dealer.push(faceCardValue(dealtCard));
-  return dealer;
+  hand.push(faceCardValue(dealtCard));
+  return hand;
 }
 
 function faceCardValue(card) {
@@ -100,23 +93,24 @@ function faceCardValue(card) {
   return card;
 }
 
-function score() {
-  let totalScore = 0;
-  return totalScore;
-}
 
 function winner(players, dealer) {
   let winner
   if (players[0].rank > dealer[0].rank) {
-    winner = "player win";
+    winner = "Player Wins";
     playerScore++;
   } else if (players[0].rank == dealer[0].rank) {
-    winner = "push";
+    winner = "War";
   } else {
-    winner = "dealer win";
+    winner = "Dealer Wins";
   }
   return winner;
 }
+
+function goToWar(){
+
+}
+
 
 function placeBets(playerPot, betAmount) {
   let bet = 0;

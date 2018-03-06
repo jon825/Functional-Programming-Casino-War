@@ -1,23 +1,67 @@
+.warGame{
+  background-color:#1F2833;
+}
+
+
+.warGame [class*="col-"] {padding-left:0;padding-right:0}
+.warGame .row {margin-left:0;margin-right:0}
+
+/* container adjusted */
+.warGame .container {width:100%;max-width:none;padding:0;}
+
 header{
   background-color: salmon;
   padding-top:1px;
   padding-left:5px;
-  color:white;
+  color:#66FCF1;
+  height:60px;
+
 }
+
 
 .player{
   text-align: right;
 }
 
-.winner{
+.winner h5{
   text-align: center;
+  position: absolute;
+  top: 30%; left: 50%;
+  transform: translate(-50%,-50%);
+  color:white;
+
+
 }
 
-.dealHand{
-  vertical-align: bottom;
+.dealHand button{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
 }
+
+.board h1{
+  color:white;
+}
+
+.board span{
+  color:#66FCF1;
+}
+
+.board h4{
+    color:white;
+
+}
+
+
 
 .playersCard, .dealersCard{
-  height:10em;
-  width:7em;
+  height:14em;
+  width:10em;
 }
+
+.backCard{
+  border-radius: 10px
+}
+
+
+
